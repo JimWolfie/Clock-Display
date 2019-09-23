@@ -78,7 +78,26 @@ public class ClockDisplay
      */
     private void updateDisplay()
     {
-        displayString = hours.getDisplayValue() + ":" + 
+        displayString = timeFormating(hours.getDisplayValue()) + ":" + 
                         minutes.getDisplayValue();
     }
+    private String timeFormating(String timeTime)
+    {
+        Integer a = Integer.parseInt(timeTime);
+        
+        if((a>12)||(a == 0))
+        {
+            
+            
+            Integer b = Math.abs(a-12); 
+            return b.toString(); 
+        }
+        
+        return a.toString(); 
+    }
+    /**
+     * internally, 
+     * a 24 hour clock is just subtracting 12 to display AM / PM
+     * so insert check for value, then subtract 12. 
+     */
 }
