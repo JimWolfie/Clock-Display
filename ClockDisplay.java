@@ -81,23 +81,14 @@ public class ClockDisplay
         displayString = timeFormating(hours.getDisplayValue()) + ":" + 
                         minutes.getDisplayValue();
     }
-    private String timeFormating(String timeTime)
+    private String timeFormating(String numberDisplay)
     {
-        Integer a = Integer.parseInt(timeTime);
-        
-        if((a>12)||(a == 0))
-        {
-            
-            
-            Integer b = Math.abs(a-12); 
-            return b.toString(); 
-        }
-        
-        return a.toString(); 
+       return ""+ Math.abs(hours.getValue()-12); 
     }
     /**
-     * internally, 
-     * a 24 hour clock is just subtracting 12 to display AM / PM
-     * so insert check for value, then subtract 12. 
+     * clocks are cyclical, 13-24 is the same as 1-12
+     * 00 is 12, therefore take absolute value
+     * hours isn't formated correctly but it ddoesn't matter because
+     * any 0 is always leading. 
      */
 }
