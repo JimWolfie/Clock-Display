@@ -20,7 +20,7 @@ public class ClockDisplay
         hours = new NumberDisplay(13);
         minutes = new NumberDisplay(60);
         setTime(12, 0, false);
-        updateDisplay();
+        
     }
 
     /**
